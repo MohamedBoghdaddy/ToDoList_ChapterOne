@@ -55,7 +55,7 @@ This shows how business logic can be validated independently of the UI.
 
 ---
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 - **React Native**
 - **Expo**
@@ -72,4 +72,4 @@ No external state management, no backend, and no storage, respecting the tech sc
 
 ```bash
 git clone https://github.com/MohamedBoghdaddy/ToDoList_ChapterOne
-cd chapter-one-task-manager
+cd ToDoList_ChapterOne
