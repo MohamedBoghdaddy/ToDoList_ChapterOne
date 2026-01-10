@@ -1,9 +1,11 @@
 import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 
+// Renders a single task row
 const TaskItem = ({ task, onToggleComplete, onDelete }) => {
   return (
     <View style={styles.container}>
+      {/* Toggle completion */}
       <TouchableOpacity style={styles.left} onPress={onToggleComplete}>
         <View
           style={[styles.checkbox, task.completed && styles.checkboxCompleted]}
@@ -15,6 +17,7 @@ const TaskItem = ({ task, onToggleComplete, onDelete }) => {
         </Text>
       </TouchableOpacity>
 
+      {/* Remove task */}
       <TouchableOpacity onPress={onDelete} onLongPress={onDelete}>
         <Text style={styles.delete}>✕</Text>
       </TouchableOpacity>

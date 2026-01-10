@@ -20,7 +20,7 @@ import {
   filterTasks,
 } from "../controllers/taskController";
 
-// Enable LayoutAnimation on Android
+// Enable layout animations on Android
 if (
   Platform.OS === "android" &&
   UIManager.setLayoutAnimationEnabledExperimental
@@ -28,12 +28,14 @@ if (
   UIManager.setLayoutAnimationEnabledExperimental(true);
 }
 
+// Main screen for managing task list
 const TaskListScreen = () => {
   const [tasks, setTasks] = useState([]);
   const [draft, setDraft] = useState("");
   const [filter, setFilter] = useState("all"); // 'all' | 'active' | 'completed'
   const [lastDeleted, setLastDeleted] = useState(null);
 
+  // Animate next list state change
   const animate = () => {
     LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
   };
@@ -58,13 +60,14 @@ const TaskListScreen = () => {
     setTasks(updated);
 
     if (taskToDelete) {
-      // Clear previous timer if exists
+      // Clear previous undo timer if present
       if (lastDeleted?.timeoutId) clearTimeout(lastDeleted.timeoutId);
 
       const timeoutId = setTimeout(() => {
         setLastDeleted(null);
       }, 4000);
 
+      // Store last deleted task for undo
       setLastDeleted({ task: taskToDelete, timeoutId });
     }
   };

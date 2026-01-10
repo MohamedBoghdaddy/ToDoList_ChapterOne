@@ -1,12 +1,7 @@
 import React from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-  Animated,
-} from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 
+// Simple snackbar for transient undo actions
 const Snackbar = ({ visible, message, onUndo }) => {
   if (!visible) return null;
 

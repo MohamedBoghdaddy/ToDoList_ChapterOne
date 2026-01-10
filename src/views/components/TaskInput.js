@@ -1,6 +1,13 @@
 import React from "react";
-import { View, TextInput, TouchableOpacity, Text, StyleSheet } from "react-native";
+import {
+  View,
+  TextInput,
+  TouchableOpacity,
+  Text,
+  StyleSheet,
+} from "react-native";
 
+// Input field for creating new tasks
 const TaskInput = ({ value, onChangeText, onSubmit, disabled }) => {
   const handleSubmit = () => {
     if (!disabled) onSubmit();

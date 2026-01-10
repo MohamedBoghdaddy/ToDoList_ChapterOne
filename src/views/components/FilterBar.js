@@ -1,12 +1,14 @@
 import React from "react";
 import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
 
+// Available filter options for the list
 const FILTERS = [
   { key: "all", label: "All" },
   { key: "active", label: "Active" },
   { key: "completed", label: "Completed" },
 ];
 
+// Renders filter chips for task visibility
 const FilterBar = ({ activeFilter, onChangeFilter }) => {
   return (
     <View style={styles.container}>
